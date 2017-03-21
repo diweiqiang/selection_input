@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        span{
+            color:red;
+        }
+        input,select{
+            font:12px/1.5 'microsoft yahei';
+            padding:5px;
+        }
+        input{
+            width:250px;
+        }
+        select{
+            width:200px;
+        }
+        .list{
+            margin-bottom: 20px;
+        }
+        .cont{
+            width:940px;
+            margin: 10px auto;
+            padding:30px;
+        }
+        label{
+            float: left;
+            width:100px;
+            text-align: right;
+            margin-right: 15px;
+        }
+        .ask{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="cont">
+    <div class="list">
+        <label><span>*</span>验证方式: </label>
+        <select name="D1" onchange="test(this.value)">
+            <option value="1">绑定手机</option>
+            <option value="2">绑定邮箱</option>
+            <option value="3">提示问题</option>
+        </select>
+    </div>
+
+    <!-------------------------------选择绑定手机-------------------------------------->
+    <div class="list" id="x1">
+        <label><span>*</span>绑定手机: </label>
+        <input type="text" value="" name="phone" placeholder="请输入密保手机">
+    </div>
+
+    <!-------------------------------选择绑定邮箱-------------------------------------->
+    <div class="list" id="x2" style="display:none">
+        <label><span>*</span>绑定邮箱: </label>
+        <input type="email" value="" name="email" placeholder="请输入密保邮箱">
+    </div>
+
+    <!-------------------------------选择提示问题-------------------------------------->
+    <div class="fl" id="x3" style="display:none">
+        <div class="list">
+            <div class="ask">
+                <label><span>*</span>问题一: </label>
+                <select name="question1">
+                    <option selected="selected" value="0">请选择提示问题</option>
+                    <option value="1">您的姓名是？</option>
+                    <option value="2">您的生日是？</option>
+                    <option value="9">您小学班主任的名字是？</option>
+                    <option value="10">您初中班主任的名字是？</option>
+                    <option value="8">您高中班主任的名字是？</option>
+                    <option value="11">您最熟悉的童年好友名字是？</option>
+                    <option value="12">您家在哪？</option>
+                    <option value="13">对您影响最大的人名字是？</option>
+                </select>
+            </div>
+            <div class="answer">
+                <label><span>*</span>答案: </label>
+                <input type="text" value="">
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="ask">
+                <label><span>*</span>问题二: </label>
+                <select name="question2">
+                    <option selected="selected" value="0">请选择提示问题</option>
+                    <option value="1">您的姓名是？</option>
+                    <option value="2">您的生日是？</option>
+                    <option value="9">您小学班主任的名字是？</option>
+                    <option value="10">您初中班主任的名字是？</option>
+                    <option value="8">您高中班主任的名字是？</option>
+                    <option value="11">您最熟悉的童年好友名字是？</option>
+                    <option value="12">您家在哪？</option>
+                    <option value="13">对您影响最大的人名字是？</option>
+                </select>
+            </div>
+            <div class="answer">
+                <label><span>*</span>答案: </label>
+                <input type="text" value="">
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="ask">
+                <label><span>*</span>问题三: </label>
+                <select name="question3">
+                    <option selected="selected" value="0">请选择提示问题</option>
+                    <option value="1">您的姓名是？</option>
+                    <option value="2">您的生日是？</option>
+                    <option value="9">您小学班主任的名字是？</option>
+                    <option value="10">您初中班主任的名字是？</option>
+                    <option value="8">您高中班主任的名字是？</option>
+                    <option value="11">您最熟悉的童年好友名字是？</option>
+                    <option value="12">您家在哪？</option>
+                    <option value="13">对您影响最大的人名字是？</option>
+                </select>
+            </div>
+            <div class="answer">
+                <label><span>*</span>答案: </label>
+                <input type="text" value="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+    function test(value) {
+        for(var i=1;i<4;i++){
+            if(value==i){
+                $('#x'+i).show();
+            }else {
+                $('#x'+i).hide();
+            }
+        }
+    }
+</script>
+</body>
+</html>
